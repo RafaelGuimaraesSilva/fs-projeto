@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss'
   ],
+  pages: true,
   tailwindcss: {
     cssPath: './tailwind.css',
     configPath: 'tailwind.config.js'
