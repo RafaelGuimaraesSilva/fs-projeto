@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Updated color tokens to match clean energy design brief */
+  --background: oklch(1 0 0); /* Pure white background */
+  --foreground: oklch(0.35 0 0); /* Dark gray text (#4b5563) */
+  --card: oklch(0.99 0.02 85); /* Light yellow card background (#fefce8) */
+  --card-foreground: oklch(0.35 0 0); /* Dark gray text on cards */
+  --popover: oklch(1 0 0); /* White popover background */
+  --popover-foreground: oklch(0.35 0 0); /* Dark gray popover text */
+  --primary: oklch(0.45 0.15 65); /* Warm yellow primary (#a16207) */
+  --primary-foreground: oklch(1 0 0); /* White text on primary */
+  --secondary: oklch(0.65 0.25 330); /* Pink accent (#ec4899) */
+  --secondary-foreground: oklch(1 0 0); /* White text on secondary */
+  --muted: oklch(0.99 0.02 85); /* Light yellow muted background */
+  --muted-foreground: oklch(0.35 0 0); /* Dark gray muted text */
+  --accent: oklch(0.65 0.25 330); /* Pink accent color */
+  --accent-foreground: oklch(1 0 0); /* White text on accent */
+  --destructive: oklch(0.55 0.25 15); /* Red for alerts */
+  --destructive-foreground: oklch(1 0 0); /* White text on destructive */
+  --border: oklch(0.92 0 0); /* Light gray borders */
+  --input: oklch(0.98 0 0); /* Very light gray input background */
+  --ring: oklch(0.45 0.15 65 / 0.5); /* Primary color focus ring */
+  --chart-1: oklch(0.65 0.2 35); /* Orange chart color */
+  --chart-2: oklch(0.65 0.25 330); /* Pink chart color */
+  --chart-3: oklch(0.45 0.15 65); /* Yellow chart color */
+  --chart-4: oklch(0.55 0.25 15); /* Red chart color */
+  --chart-5: oklch(0.6 0.2 25); /* Orange-red chart color */
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* Updated dark mode colors to maintain energy theme */
+  --background: oklch(0.1 0 0); /* Very dark background */
+  --foreground: oklch(0.95 0 0); /* Light text */
+  --card: oklch(0.15 0 0); /* Dark card background */
+  --card-foreground: oklch(0.95 0 0); /* Light text on cards */
+  --popover: oklch(0.1 0 0); /* Dark popover background */
+  --popover-foreground: oklch(0.95 0 0); /* Light popover text */
+  --primary: oklch(0.55 0.15 65); /* Brighter yellow for dark mode */
+  --primary-foreground: oklch(0.1 0 0); /* Dark text on primary */
+  --secondary: oklch(0.7 0.25 330); /* Brighter pink for dark mode */
+  --secondary-foreground: oklch(0.1 0 0); /* Dark text on secondary */
+  --muted: oklch(0.2 0 0); /* Dark muted background */
+  --muted-foreground: oklch(0.7 0 0); /* Light muted text */
+  --accent: oklch(0.7 0.25 330); /* Bright pink accent */
+  --accent-foreground: oklch(0.1 0 0); /* Dark text on accent */
+  --destructive: oklch(0.6 0.25 15); /* Bright red for alerts */
+  --destructive-foreground: oklch(0.95 0 0); /* Light text on destructive */
+  --border: oklch(0.25 0 0); /* Dark borders */
+  --input: oklch(0.2 0 0); /* Dark input background */
+  --ring: oklch(0.55 0.15 65 / 0.5); /* Primary focus ring */
+  --chart-1: oklch(0.7 0.2 35); /* Bright orange chart */
+  --chart-2: oklch(0.7 0.25 330); /* Bright pink chart */
+  --chart-3: oklch(0.55 0.15 65); /* Bright yellow chart */
+  --chart-4: oklch(0.6 0.25 15); /* Bright red chart */
+  --chart-5: oklch(0.65 0.2 25); /* Bright orange-red chart */
+}
+
+@layer base {
+  * {
+    @apply border-gray-300;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  .bg-background { background-color: var(--background); }
+  .text-foreground { color: var(--foreground); }
+  .bg-card { background-color: var(--card); }
+  .text-card-foreground { color: var(--card-foreground); }
+  .bg-primary { background-color: var(--primary); }
+  .text-primary { color: var(--primary); }
+  .text-primary-foreground { color: var(--primary-foreground); }
+  .bg-secondary { background-color: var(--secondary); }
+  .text-secondary { color: var(--secondary); }
+  .text-secondary-foreground { color: var(--secondary-foreground); }
+  .text-muted-foreground { color: var(--muted-foreground); }
+  .bg-muted { background-color: var(--muted); }
+  .border-border { border-color: var(--border); }
+  .text-chart-1 { color: var(--chart-1); }
+  .text-chart-4 { color: var(--chart-4); }
+  
+  .hover\:bg-primary\/90:hover { background-color: color-mix(in oklch, var(--primary), transparent 10%); }
+  .hover\:bg-primary\/10:hover { background-color: color-mix(in oklch, var(--primary), transparent 90%); }
+  .hover\:bg-secondary\/10:hover { background-color: color-mix(in oklch, var(--secondary), transparent 90%); }
+  
+  .bg-primary\/10 { background-color: color-mix(in oklch, var(--primary), transparent 90%); }
+  .bg-secondary\/10 { background-color: color-mix(in oklch, var(--secondary), transparent 90%); }
+  .bg-chart-1\/10 { background-color: color-mix(in oklch, var(--chart-1), transparent 90%); }
+  .bg-chart-4\/10 { background-color: color-mix(in oklch, var(--chart-4), transparent 90%); }
+  .bg-primary\/5 { background-color: color-mix(in oklch, var(--primary), transparent 95%); }
+  .bg-card\/50 { background-color: color-mix(in oklch, var(--card), transparent 50%); }
+  .bg-card\/30 { background-color: color-mix(in oklch, var(--card), transparent 70%); }
+  .border-secondary\/20 { border-color: color-mix(in oklch, var(--secondary), transparent 80%); }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50;
+    border-radius: var(--radius);
+  }
+  
+  .btn-primary {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+  
+  .btn-primary:hover {
+    background-color: color-mix(in oklch, var(--primary), black 10%);
+  }
+  
+  .btn-outline {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+  }
+  
+  .btn-outline:hover {
+    background-color: color-mix(in oklch, var(--primary), transparent 90%);
+  }
+  
+  .btn-sm { @apply h-8 px-3 text-xs; }
+  .btn-md { @apply h-10 px-4 py-2; }
+  .btn-lg { @apply h-12 px-8; }
+  
+  .card {
+    background-color: var(--card);
+    color: var(--card-foreground);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors;
+  }
+}
